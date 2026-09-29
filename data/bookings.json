@@ -1,0 +1,2427 @@
+{
+ "meta": {
+  "fictional": true,
+  "note": "가상 의원 '샘플의원'의 합성 기존 예약. 실제 환자·병원과 관계없음. 생성기 data/scripts/generate_bookings.py(시드 20260921).",
+  "generalRange": [
+   "2026-09-21",
+   "2026-10-19"
+  ],
+  "surgeryRange": [
+   "2026-09-21",
+   "2026-11-02"
+  ],
+  "counts": {
+   "first-consult": 60,
+   "injection": 112,
+   "postop-visit": 49,
+   "revisit-consult": 93,
+   "scalp-care": 61,
+   "surgery-full": 10,
+   "surgery-half": 6
+  }
+ },
+ "bookings": [
+  {
+   "id": "B0001",
+   "service": "first-consult",
+   "date": "2026-09-21",
+   "start": "10:00"
+  },
+  {
+   "id": "B0002",
+   "service": "injection",
+   "date": "2026-09-21",
+   "start": "10:00"
+  },
+  {
+   "id": "B0003",
+   "service": "revisit-consult",
+   "date": "2026-09-21",
+   "start": "10:00"
+  },
+  {
+   "id": "B0004",
+   "service": "injection",
+   "date": "2026-09-21",
+   "start": "10:30"
+  },
+  {
+   "id": "B0005",
+   "service": "scalp-care",
+   "date": "2026-09-21",
+   "start": "10:30"
+  },
+  {
+   "id": "B0006",
+   "service": "revisit-consult",
+   "date": "2026-09-21",
+   "start": "11:00"
+  },
+  {
+   "id": "B0007",
+   "service": "postop-visit",
+   "date": "2026-09-21",
+   "start": "11:30"
+  },
+  {
+   "id": "B0008",
+   "service": "scalp-care",
+   "date": "2026-09-21",
+   "start": "11:30"
+  },
+  {
+   "id": "B0009",
+   "service": "revisit-consult",
+   "date": "2026-09-21",
+   "start": "12:00"
+  },
+  {
+   "id": "B0010",
+   "service": "injection",
+   "date": "2026-09-21",
+   "start": "12:30"
+  },
+  {
+   "id": "B0011",
+   "service": "postop-visit",
+   "date": "2026-09-21",
+   "start": "12:30"
+  },
+  {
+   "id": "B0012",
+   "service": "first-consult",
+   "date": "2026-09-21",
+   "start": "14:00"
+  },
+  {
+   "id": "B0013",
+   "service": "scalp-care",
+   "date": "2026-09-21",
+   "start": "14:00"
+  },
+  {
+   "id": "B0014",
+   "service": "injection",
+   "date": "2026-09-21",
+   "start": "15:00"
+  },
+  {
+   "id": "B0015",
+   "service": "revisit-consult",
+   "date": "2026-09-21",
+   "start": "15:00"
+  },
+  {
+   "id": "B0016",
+   "service": "injection",
+   "date": "2026-09-21",
+   "start": "15:30"
+  },
+  {
+   "id": "B0017",
+   "service": "postop-visit",
+   "date": "2026-09-21",
+   "start": "15:30"
+  },
+  {
+   "id": "B0018",
+   "service": "first-consult",
+   "date": "2026-09-21",
+   "start": "16:00"
+  },
+  {
+   "id": "B0019",
+   "service": "injection",
+   "date": "2026-09-21",
+   "start": "16:00"
+  },
+  {
+   "id": "B0020",
+   "service": "revisit-consult",
+   "date": "2026-09-21",
+   "start": "16:00"
+  },
+  {
+   "id": "B0021",
+   "service": "first-consult",
+   "date": "2026-09-21",
+   "start": "16:30"
+  },
+  {
+   "id": "B0022",
+   "service": "first-consult",
+   "date": "2026-09-21",
+   "start": "17:00"
+  },
+  {
+   "id": "B0023",
+   "service": "injection",
+   "date": "2026-09-21",
+   "start": "17:00"
+  },
+  {
+   "id": "B0024",
+   "service": "injection",
+   "date": "2026-09-21",
+   "start": "17:30"
+  },
+  {
+   "id": "B0025",
+   "service": "postop-visit",
+   "date": "2026-09-21",
+   "start": "18:00"
+  },
+  {
+   "id": "B0026",
+   "service": "scalp-care",
+   "date": "2026-09-21",
+   "start": "18:00"
+  },
+  {
+   "id": "B0027",
+   "service": "injection",
+   "date": "2026-09-21",
+   "start": "18:30"
+  },
+  {
+   "id": "B0028",
+   "service": "revisit-consult",
+   "date": "2026-09-21",
+   "start": "18:30"
+  },
+  {
+   "id": "B0029",
+   "service": "injection",
+   "date": "2026-09-22",
+   "start": "10:00"
+  },
+  {
+   "id": "B0030",
+   "service": "surgery-full",
+   "date": "2026-09-22",
+   "start": "10:00",
+   "assigned": {
+    "doctor": "의료진 A"
+   }
+  },
+  {
+   "id": "B0031",
+   "service": "injection",
+   "date": "2026-09-22",
+   "start": "10:30"
+  },
+  {
+   "id": "B0032",
+   "service": "injection",
+   "date": "2026-09-22",
+   "start": "11:00"
+  },
+  {
+   "id": "B0033",
+   "service": "injection",
+   "date": "2026-09-22",
+   "start": "11:30"
+  },
+  {
+   "id": "B0034",
+   "service": "postop-visit",
+   "date": "2026-09-22",
+   "start": "15:00"
+  },
+  {
+   "id": "B0035",
+   "service": "revisit-consult",
+   "date": "2026-09-22",
+   "start": "15:30"
+  },
+  {
+   "id": "B0036",
+   "service": "scalp-care",
+   "date": "2026-09-22",
+   "start": "15:30"
+  },
+  {
+   "id": "B0037",
+   "service": "revisit-consult",
+   "date": "2026-09-22",
+   "start": "16:00"
+  },
+  {
+   "id": "B0038",
+   "service": "injection",
+   "date": "2026-09-22",
+   "start": "16:30"
+  },
+  {
+   "id": "B0039",
+   "service": "revisit-consult",
+   "date": "2026-09-22",
+   "start": "17:00"
+  },
+  {
+   "id": "B0040",
+   "service": "postop-visit",
+   "date": "2026-09-22",
+   "start": "17:30"
+  },
+  {
+   "id": "B0041",
+   "service": "injection",
+   "date": "2026-09-22",
+   "start": "18:00"
+  },
+  {
+   "id": "B0042",
+   "service": "revisit-consult",
+   "date": "2026-09-22",
+   "start": "18:00"
+  },
+  {
+   "id": "B0043",
+   "service": "scalp-care",
+   "date": "2026-09-22",
+   "start": "18:00"
+  },
+  {
+   "id": "B0044",
+   "service": "revisit-consult",
+   "date": "2026-09-22",
+   "start": "18:30"
+  },
+  {
+   "id": "B0045",
+   "service": "injection",
+   "date": "2026-09-23",
+   "start": "10:00"
+  },
+  {
+   "id": "B0046",
+   "service": "revisit-consult",
+   "date": "2026-09-23",
+   "start": "10:00"
+  },
+  {
+   "id": "B0047",
+   "service": "injection",
+   "date": "2026-09-23",
+   "start": "10:30"
+  },
+  {
+   "id": "B0048",
+   "service": "postop-visit",
+   "date": "2026-09-23",
+   "start": "10:30"
+  },
+  {
+   "id": "B0049",
+   "service": "first-consult",
+   "date": "2026-09-23",
+   "start": "11:00"
+  },
+  {
+   "id": "B0050",
+   "service": "postop-visit",
+   "date": "2026-09-23",
+   "start": "11:00"
+  },
+  {
+   "id": "B0051",
+   "service": "first-consult",
+   "date": "2026-09-23",
+   "start": "11:30"
+  },
+  {
+   "id": "B0052",
+   "service": "scalp-care",
+   "date": "2026-09-23",
+   "start": "11:30"
+  },
+  {
+   "id": "B0053",
+   "service": "first-consult",
+   "date": "2026-09-23",
+   "start": "12:00"
+  },
+  {
+   "id": "B0054",
+   "service": "injection",
+   "date": "2026-09-23",
+   "start": "12:00"
+  },
+  {
+   "id": "B0055",
+   "service": "revisit-consult",
+   "date": "2026-09-23",
+   "start": "12:30"
+  },
+  {
+   "id": "B0056",
+   "service": "revisit-consult",
+   "date": "2026-09-23",
+   "start": "14:00"
+  },
+  {
+   "id": "B0057",
+   "service": "postop-visit",
+   "date": "2026-09-23",
+   "start": "14:30"
+  },
+  {
+   "id": "B0058",
+   "service": "revisit-consult",
+   "date": "2026-09-23",
+   "start": "14:30"
+  },
+  {
+   "id": "B0059",
+   "service": "first-consult",
+   "date": "2026-09-23",
+   "start": "15:00"
+  },
+  {
+   "id": "B0060",
+   "service": "injection",
+   "date": "2026-09-23",
+   "start": "15:00"
+  },
+  {
+   "id": "B0061",
+   "service": "postop-visit",
+   "date": "2026-09-23",
+   "start": "15:00"
+  },
+  {
+   "id": "B0062",
+   "service": "revisit-consult",
+   "date": "2026-09-23",
+   "start": "15:30"
+  },
+  {
+   "id": "B0063",
+   "service": "scalp-care",
+   "date": "2026-09-23",
+   "start": "15:30"
+  },
+  {
+   "id": "B0064",
+   "service": "injection",
+   "date": "2026-09-23",
+   "start": "16:00"
+  },
+  {
+   "id": "B0065",
+   "service": "first-consult",
+   "date": "2026-09-23",
+   "start": "16:30"
+  },
+  {
+   "id": "B0066",
+   "service": "injection",
+   "date": "2026-09-23",
+   "start": "16:30"
+  },
+  {
+   "id": "B0067",
+   "service": "postop-visit",
+   "date": "2026-09-23",
+   "start": "16:30"
+  },
+  {
+   "id": "B0068",
+   "service": "injection",
+   "date": "2026-09-23",
+   "start": "17:00"
+  },
+  {
+   "id": "B0069",
+   "service": "scalp-care",
+   "date": "2026-09-23",
+   "start": "17:00"
+  },
+  {
+   "id": "B0070",
+   "service": "first-consult",
+   "date": "2026-09-23",
+   "start": "17:30"
+  },
+  {
+   "id": "B0071",
+   "service": "injection",
+   "date": "2026-09-23",
+   "start": "17:30"
+  },
+  {
+   "id": "B0072",
+   "service": "revisit-consult",
+   "date": "2026-09-23",
+   "start": "17:30"
+  },
+  {
+   "id": "B0073",
+   "service": "injection",
+   "date": "2026-09-23",
+   "start": "18:00"
+  },
+  {
+   "id": "B0074",
+   "service": "scalp-care",
+   "date": "2026-09-23",
+   "start": "18:00"
+  },
+  {
+   "id": "B0075",
+   "service": "postop-visit",
+   "date": "2026-09-23",
+   "start": "18:30"
+  },
+  {
+   "id": "B0076",
+   "service": "scalp-care",
+   "date": "2026-09-28",
+   "start": "10:00"
+  },
+  {
+   "id": "B0077",
+   "service": "revisit-consult",
+   "date": "2026-09-28",
+   "start": "10:30"
+  },
+  {
+   "id": "B0078",
+   "service": "revisit-consult",
+   "date": "2026-09-28",
+   "start": "11:00"
+  },
+  {
+   "id": "B0079",
+   "service": "injection",
+   "date": "2026-09-28",
+   "start": "11:30"
+  },
+  {
+   "id": "B0080",
+   "service": "revisit-consult",
+   "date": "2026-09-28",
+   "start": "12:00"
+  },
+  {
+   "id": "B0081",
+   "service": "injection",
+   "date": "2026-09-28",
+   "start": "12:30"
+  },
+  {
+   "id": "B0082",
+   "service": "first-consult",
+   "date": "2026-09-28",
+   "start": "14:00"
+  },
+  {
+   "id": "B0083",
+   "service": "scalp-care",
+   "date": "2026-09-28",
+   "start": "14:30"
+  },
+  {
+   "id": "B0084",
+   "service": "revisit-consult",
+   "date": "2026-09-28",
+   "start": "15:00"
+  },
+  {
+   "id": "B0085",
+   "service": "scalp-care",
+   "date": "2026-09-28",
+   "start": "15:30"
+  },
+  {
+   "id": "B0086",
+   "service": "revisit-consult",
+   "date": "2026-09-28",
+   "start": "16:30"
+  },
+  {
+   "id": "B0087",
+   "service": "revisit-consult",
+   "date": "2026-09-28",
+   "start": "17:00"
+  },
+  {
+   "id": "B0088",
+   "service": "first-consult",
+   "date": "2026-09-28",
+   "start": "17:30"
+  },
+  {
+   "id": "B0089",
+   "service": "first-consult",
+   "date": "2026-09-28",
+   "start": "18:00"
+  },
+  {
+   "id": "B0090",
+   "service": "injection",
+   "date": "2026-09-28",
+   "start": "18:00"
+  },
+  {
+   "id": "B0091",
+   "service": "scalp-care",
+   "date": "2026-09-28",
+   "start": "18:00"
+  },
+  {
+   "id": "B0092",
+   "service": "injection",
+   "date": "2026-09-28",
+   "start": "18:30"
+  },
+  {
+   "id": "B0093",
+   "service": "revisit-consult",
+   "date": "2026-09-29",
+   "start": "10:00"
+  },
+  {
+   "id": "B0094",
+   "service": "surgery-half",
+   "date": "2026-09-29",
+   "start": "10:00",
+   "assigned": {
+    "doctor": "의료진 B"
+   }
+  },
+  {
+   "id": "B0095",
+   "service": "injection",
+   "date": "2026-09-29",
+   "start": "10:30"
+  },
+  {
+   "id": "B0096",
+   "service": "revisit-consult",
+   "date": "2026-09-29",
+   "start": "11:00"
+  },
+  {
+   "id": "B0097",
+   "service": "postop-visit",
+   "date": "2026-09-29",
+   "start": "11:30"
+  },
+  {
+   "id": "B0098",
+   "service": "postop-visit",
+   "date": "2026-09-29",
+   "start": "12:00"
+  },
+  {
+   "id": "B0099",
+   "service": "injection",
+   "date": "2026-09-29",
+   "start": "12:30"
+  },
+  {
+   "id": "B0100",
+   "service": "first-consult",
+   "date": "2026-09-29",
+   "start": "14:00"
+  },
+  {
+   "id": "B0101",
+   "service": "injection",
+   "date": "2026-09-29",
+   "start": "14:00"
+  },
+  {
+   "id": "B0102",
+   "service": "revisit-consult",
+   "date": "2026-09-29",
+   "start": "14:00"
+  },
+  {
+   "id": "B0103",
+   "service": "scalp-care",
+   "date": "2026-09-29",
+   "start": "14:00"
+  },
+  {
+   "id": "B0104",
+   "service": "revisit-consult",
+   "date": "2026-09-29",
+   "start": "15:00"
+  },
+  {
+   "id": "B0105",
+   "service": "injection",
+   "date": "2026-09-29",
+   "start": "15:30"
+  },
+  {
+   "id": "B0106",
+   "service": "injection",
+   "date": "2026-09-29",
+   "start": "16:00"
+  },
+  {
+   "id": "B0107",
+   "service": "injection",
+   "date": "2026-09-29",
+   "start": "16:30"
+  },
+  {
+   "id": "B0108",
+   "service": "first-consult",
+   "date": "2026-09-29",
+   "start": "17:00"
+  },
+  {
+   "id": "B0109",
+   "service": "first-consult",
+   "date": "2026-09-29",
+   "start": "17:30"
+  },
+  {
+   "id": "B0110",
+   "service": "scalp-care",
+   "date": "2026-09-29",
+   "start": "18:00"
+  },
+  {
+   "id": "B0111",
+   "service": "injection",
+   "date": "2026-09-29",
+   "start": "18:30"
+  },
+  {
+   "id": "B0112",
+   "service": "scalp-care",
+   "date": "2026-09-30",
+   "start": "10:00"
+  },
+  {
+   "id": "B0113",
+   "service": "surgery-full",
+   "date": "2026-09-30",
+   "start": "10:00",
+   "assigned": {
+    "doctor": "의료진 A"
+   }
+  },
+  {
+   "id": "B0114",
+   "service": "scalp-care",
+   "date": "2026-09-30",
+   "start": "11:30"
+  },
+  {
+   "id": "B0115",
+   "service": "scalp-care",
+   "date": "2026-09-30",
+   "start": "16:00"
+  },
+  {
+   "id": "B0116",
+   "service": "scalp-care",
+   "date": "2026-09-30",
+   "start": "17:30"
+  },
+  {
+   "id": "B0117",
+   "service": "revisit-consult",
+   "date": "2026-09-30",
+   "start": "18:00"
+  },
+  {
+   "id": "B0118",
+   "service": "postop-visit",
+   "date": "2026-09-30",
+   "start": "18:30"
+  },
+  {
+   "id": "B0119",
+   "service": "injection",
+   "date": "2026-10-01",
+   "start": "10:00"
+  },
+  {
+   "id": "B0120",
+   "service": "first-consult",
+   "date": "2026-10-01",
+   "start": "10:30"
+  },
+  {
+   "id": "B0121",
+   "service": "scalp-care",
+   "date": "2026-10-01",
+   "start": "11:00"
+  },
+  {
+   "id": "B0122",
+   "service": "revisit-consult",
+   "date": "2026-10-01",
+   "start": "11:30"
+  },
+  {
+   "id": "B0123",
+   "service": "revisit-consult",
+   "date": "2026-10-01",
+   "start": "12:00"
+  },
+  {
+   "id": "B0124",
+   "service": "injection",
+   "date": "2026-10-01",
+   "start": "12:30"
+  },
+  {
+   "id": "B0125",
+   "service": "postop-visit",
+   "date": "2026-10-01",
+   "start": "14:00"
+  },
+  {
+   "id": "B0126",
+   "service": "scalp-care",
+   "date": "2026-10-01",
+   "start": "14:30"
+  },
+  {
+   "id": "B0127",
+   "service": "revisit-consult",
+   "date": "2026-10-01",
+   "start": "15:00"
+  },
+  {
+   "id": "B0128",
+   "service": "injection",
+   "date": "2026-10-01",
+   "start": "15:30"
+  },
+  {
+   "id": "B0129",
+   "service": "postop-visit",
+   "date": "2026-10-01",
+   "start": "16:00"
+  },
+  {
+   "id": "B0130",
+   "service": "revisit-consult",
+   "date": "2026-10-01",
+   "start": "16:30"
+  },
+  {
+   "id": "B0131",
+   "service": "scalp-care",
+   "date": "2026-10-01",
+   "start": "16:30"
+  },
+  {
+   "id": "B0132",
+   "service": "revisit-consult",
+   "date": "2026-10-01",
+   "start": "17:30"
+  },
+  {
+   "id": "B0133",
+   "service": "scalp-care",
+   "date": "2026-10-01",
+   "start": "17:30"
+  },
+  {
+   "id": "B0134",
+   "service": "injection",
+   "date": "2026-10-01",
+   "start": "18:00"
+  },
+  {
+   "id": "B0135",
+   "service": "revisit-consult",
+   "date": "2026-10-01",
+   "start": "18:00"
+  },
+  {
+   "id": "B0136",
+   "service": "first-consult",
+   "date": "2026-10-01",
+   "start": "18:30"
+  },
+  {
+   "id": "B0137",
+   "service": "injection",
+   "date": "2026-10-01",
+   "start": "18:30"
+  },
+  {
+   "id": "B0138",
+   "service": "revisit-consult",
+   "date": "2026-10-01",
+   "start": "18:30"
+  },
+  {
+   "id": "B0139",
+   "service": "scalp-care",
+   "date": "2026-10-01",
+   "start": "18:30"
+  },
+  {
+   "id": "B0140",
+   "service": "postop-visit",
+   "date": "2026-10-01",
+   "start": "19:30"
+  },
+  {
+   "id": "B0141",
+   "service": "revisit-consult",
+   "date": "2026-10-02",
+   "start": "10:00"
+  },
+  {
+   "id": "B0142",
+   "service": "injection",
+   "date": "2026-10-02",
+   "start": "10:30"
+  },
+  {
+   "id": "B0143",
+   "service": "postop-visit",
+   "date": "2026-10-02",
+   "start": "10:30"
+  },
+  {
+   "id": "B0144",
+   "service": "revisit-consult",
+   "date": "2026-10-02",
+   "start": "11:00"
+  },
+  {
+   "id": "B0145",
+   "service": "scalp-care",
+   "date": "2026-10-02",
+   "start": "11:00"
+  },
+  {
+   "id": "B0146",
+   "service": "injection",
+   "date": "2026-10-02",
+   "start": "11:30"
+  },
+  {
+   "id": "B0147",
+   "service": "first-consult",
+   "date": "2026-10-02",
+   "start": "12:00"
+  },
+  {
+   "id": "B0148",
+   "service": "injection",
+   "date": "2026-10-02",
+   "start": "12:00"
+  },
+  {
+   "id": "B0149",
+   "service": "postop-visit",
+   "date": "2026-10-02",
+   "start": "12:00"
+  },
+  {
+   "id": "B0150",
+   "service": "injection",
+   "date": "2026-10-02",
+   "start": "12:30"
+  },
+  {
+   "id": "B0151",
+   "service": "injection",
+   "date": "2026-10-02",
+   "start": "14:00"
+  },
+  {
+   "id": "B0152",
+   "service": "postop-visit",
+   "date": "2026-10-02",
+   "start": "14:00"
+  },
+  {
+   "id": "B0153",
+   "service": "first-consult",
+   "date": "2026-10-02",
+   "start": "14:30"
+  },
+  {
+   "id": "B0154",
+   "service": "injection",
+   "date": "2026-10-02",
+   "start": "14:30"
+  },
+  {
+   "id": "B0155",
+   "service": "revisit-consult",
+   "date": "2026-10-02",
+   "start": "14:30"
+  },
+  {
+   "id": "B0156",
+   "service": "revisit-consult",
+   "date": "2026-10-02",
+   "start": "15:30"
+  },
+  {
+   "id": "B0157",
+   "service": "revisit-consult",
+   "date": "2026-10-02",
+   "start": "15:30"
+  },
+  {
+   "id": "B0158",
+   "service": "first-consult",
+   "date": "2026-10-02",
+   "start": "16:00"
+  },
+  {
+   "id": "B0159",
+   "service": "scalp-care",
+   "date": "2026-10-02",
+   "start": "16:00"
+  },
+  {
+   "id": "B0160",
+   "service": "injection",
+   "date": "2026-10-02",
+   "start": "16:30"
+  },
+  {
+   "id": "B0161",
+   "service": "first-consult",
+   "date": "2026-10-02",
+   "start": "17:00"
+  },
+  {
+   "id": "B0162",
+   "service": "first-consult",
+   "date": "2026-10-02",
+   "start": "17:00"
+  },
+  {
+   "id": "B0163",
+   "service": "scalp-care",
+   "date": "2026-10-02",
+   "start": "17:00"
+  },
+  {
+   "id": "B0164",
+   "service": "first-consult",
+   "date": "2026-10-02",
+   "start": "18:00"
+  },
+  {
+   "id": "B0165",
+   "service": "injection",
+   "date": "2026-10-02",
+   "start": "18:00"
+  },
+  {
+   "id": "B0166",
+   "service": "revisit-consult",
+   "date": "2026-10-02",
+   "start": "18:00"
+  },
+  {
+   "id": "B0167",
+   "service": "scalp-care",
+   "date": "2026-10-02",
+   "start": "18:00"
+  },
+  {
+   "id": "B0168",
+   "service": "injection",
+   "date": "2026-10-02",
+   "start": "18:30"
+  },
+  {
+   "id": "B0169",
+   "service": "revisit-consult",
+   "date": "2026-10-06",
+   "start": "10:00"
+  },
+  {
+   "id": "B0170",
+   "service": "surgery-full",
+   "date": "2026-10-06",
+   "start": "10:00",
+   "assigned": {
+    "doctor": "의료진 B"
+   }
+  },
+  {
+   "id": "B0171",
+   "service": "first-consult",
+   "date": "2026-10-06",
+   "start": "10:30"
+  },
+  {
+   "id": "B0172",
+   "service": "scalp-care",
+   "date": "2026-10-06",
+   "start": "11:00"
+  },
+  {
+   "id": "B0173",
+   "service": "revisit-consult",
+   "date": "2026-10-06",
+   "start": "11:30"
+  },
+  {
+   "id": "B0174",
+   "service": "injection",
+   "date": "2026-10-06",
+   "start": "12:00"
+  },
+  {
+   "id": "B0175",
+   "service": "revisit-consult",
+   "date": "2026-10-06",
+   "start": "12:30"
+  },
+  {
+   "id": "B0176",
+   "service": "injection",
+   "date": "2026-10-06",
+   "start": "14:00"
+  },
+  {
+   "id": "B0177",
+   "service": "postop-visit",
+   "date": "2026-10-06",
+   "start": "14:30"
+  },
+  {
+   "id": "B0178",
+   "service": "first-consult",
+   "date": "2026-10-06",
+   "start": "15:00"
+  },
+  {
+   "id": "B0179",
+   "service": "scalp-care",
+   "date": "2026-10-06",
+   "start": "15:30"
+  },
+  {
+   "id": "B0180",
+   "service": "revisit-consult",
+   "date": "2026-10-06",
+   "start": "16:00"
+  },
+  {
+   "id": "B0181",
+   "service": "first-consult",
+   "date": "2026-10-06",
+   "start": "16:30"
+  },
+  {
+   "id": "B0182",
+   "service": "injection",
+   "date": "2026-10-06",
+   "start": "17:30"
+  },
+  {
+   "id": "B0183",
+   "service": "first-consult",
+   "date": "2026-10-06",
+   "start": "18:00"
+  },
+  {
+   "id": "B0184",
+   "service": "injection",
+   "date": "2026-10-06",
+   "start": "18:00"
+  },
+  {
+   "id": "B0185",
+   "service": "revisit-consult",
+   "date": "2026-10-06",
+   "start": "18:00"
+  },
+  {
+   "id": "B0186",
+   "service": "scalp-care",
+   "date": "2026-10-06",
+   "start": "18:00"
+  },
+  {
+   "id": "B0187",
+   "service": "postop-visit",
+   "date": "2026-10-06",
+   "start": "18:30"
+  },
+  {
+   "id": "B0188",
+   "service": "injection",
+   "date": "2026-10-07",
+   "start": "10:00"
+  },
+  {
+   "id": "B0189",
+   "service": "postop-visit",
+   "date": "2026-10-07",
+   "start": "10:30"
+  },
+  {
+   "id": "B0190",
+   "service": "revisit-consult",
+   "date": "2026-10-07",
+   "start": "11:00"
+  },
+  {
+   "id": "B0191",
+   "service": "scalp-care",
+   "date": "2026-10-07",
+   "start": "11:00"
+  },
+  {
+   "id": "B0192",
+   "service": "revisit-consult",
+   "date": "2026-10-07",
+   "start": "11:30"
+  },
+  {
+   "id": "B0193",
+   "service": "injection",
+   "date": "2026-10-07",
+   "start": "12:00"
+  },
+  {
+   "id": "B0194",
+   "service": "injection",
+   "date": "2026-10-07",
+   "start": "12:30"
+  },
+  {
+   "id": "B0195",
+   "service": "injection",
+   "date": "2026-10-07",
+   "start": "14:00"
+  },
+  {
+   "id": "B0196",
+   "service": "revisit-consult",
+   "date": "2026-10-07",
+   "start": "14:00"
+  },
+  {
+   "id": "B0197",
+   "service": "postop-visit",
+   "date": "2026-10-07",
+   "start": "14:30"
+  },
+  {
+   "id": "B0198",
+   "service": "surgery-half",
+   "date": "2026-10-07",
+   "start": "14:30",
+   "assigned": {
+    "doctor": "의료진 A"
+   }
+  },
+  {
+   "id": "B0199",
+   "service": "postop-visit",
+   "date": "2026-10-07",
+   "start": "15:00"
+  },
+  {
+   "id": "B0200",
+   "service": "first-consult",
+   "date": "2026-10-07",
+   "start": "15:30"
+  },
+  {
+   "id": "B0201",
+   "service": "first-consult",
+   "date": "2026-10-07",
+   "start": "16:00"
+  },
+  {
+   "id": "B0202",
+   "service": "scalp-care",
+   "date": "2026-10-07",
+   "start": "16:30"
+  },
+  {
+   "id": "B0203",
+   "service": "revisit-consult",
+   "date": "2026-10-07",
+   "start": "17:00"
+  },
+  {
+   "id": "B0204",
+   "service": "injection",
+   "date": "2026-10-07",
+   "start": "17:30"
+  },
+  {
+   "id": "B0205",
+   "service": "first-consult",
+   "date": "2026-10-07",
+   "start": "18:00"
+  },
+  {
+   "id": "B0206",
+   "service": "revisit-consult",
+   "date": "2026-10-07",
+   "start": "18:30"
+  },
+  {
+   "id": "B0207",
+   "service": "first-consult",
+   "date": "2026-10-08",
+   "start": "10:00"
+  },
+  {
+   "id": "B0208",
+   "service": "scalp-care",
+   "date": "2026-10-08",
+   "start": "10:00"
+  },
+  {
+   "id": "B0209",
+   "service": "injection",
+   "date": "2026-10-08",
+   "start": "10:30"
+  },
+  {
+   "id": "B0210",
+   "service": "first-consult",
+   "date": "2026-10-08",
+   "start": "11:00"
+  },
+  {
+   "id": "B0211",
+   "service": "injection",
+   "date": "2026-10-08",
+   "start": "11:00"
+  },
+  {
+   "id": "B0212",
+   "service": "revisit-consult",
+   "date": "2026-10-08",
+   "start": "11:00"
+  },
+  {
+   "id": "B0213",
+   "service": "scalp-care",
+   "date": "2026-10-08",
+   "start": "11:00"
+  },
+  {
+   "id": "B0214",
+   "service": "first-consult",
+   "date": "2026-10-08",
+   "start": "11:30"
+  },
+  {
+   "id": "B0215",
+   "service": "injection",
+   "date": "2026-10-08",
+   "start": "11:30"
+  },
+  {
+   "id": "B0216",
+   "service": "postop-visit",
+   "date": "2026-10-08",
+   "start": "12:00"
+  },
+  {
+   "id": "B0217",
+   "service": "injection",
+   "date": "2026-10-08",
+   "start": "12:30"
+  },
+  {
+   "id": "B0218",
+   "service": "revisit-consult",
+   "date": "2026-10-08",
+   "start": "12:30"
+  },
+  {
+   "id": "B0219",
+   "service": "postop-visit",
+   "date": "2026-10-08",
+   "start": "14:00"
+  },
+  {
+   "id": "B0220",
+   "service": "revisit-consult",
+   "date": "2026-10-08",
+   "start": "14:00"
+  },
+  {
+   "id": "B0221",
+   "service": "scalp-care",
+   "date": "2026-10-08",
+   "start": "14:30"
+  },
+  {
+   "id": "B0222",
+   "service": "injection",
+   "date": "2026-10-08",
+   "start": "15:00"
+  },
+  {
+   "id": "B0223",
+   "service": "revisit-consult",
+   "date": "2026-10-08",
+   "start": "15:30"
+  },
+  {
+   "id": "B0224",
+   "service": "revisit-consult",
+   "date": "2026-10-08",
+   "start": "15:30"
+  },
+  {
+   "id": "B0225",
+   "service": "scalp-care",
+   "date": "2026-10-08",
+   "start": "15:30"
+  },
+  {
+   "id": "B0226",
+   "service": "first-consult",
+   "date": "2026-10-08",
+   "start": "16:00"
+  },
+  {
+   "id": "B0227",
+   "service": "injection",
+   "date": "2026-10-08",
+   "start": "16:00"
+  },
+  {
+   "id": "B0228",
+   "service": "first-consult",
+   "date": "2026-10-08",
+   "start": "16:30"
+  },
+  {
+   "id": "B0229",
+   "service": "injection",
+   "date": "2026-10-08",
+   "start": "16:30"
+  },
+  {
+   "id": "B0230",
+   "service": "injection",
+   "date": "2026-10-08",
+   "start": "17:30"
+  },
+  {
+   "id": "B0231",
+   "service": "revisit-consult",
+   "date": "2026-10-08",
+   "start": "17:30"
+  },
+  {
+   "id": "B0232",
+   "service": "scalp-care",
+   "date": "2026-10-08",
+   "start": "17:30"
+  },
+  {
+   "id": "B0233",
+   "service": "first-consult",
+   "date": "2026-10-08",
+   "start": "18:00"
+  },
+  {
+   "id": "B0234",
+   "service": "postop-visit",
+   "date": "2026-10-08",
+   "start": "18:00"
+  },
+  {
+   "id": "B0235",
+   "service": "postop-visit",
+   "date": "2026-10-08",
+   "start": "18:30"
+  },
+  {
+   "id": "B0236",
+   "service": "injection",
+   "date": "2026-10-08",
+   "start": "19:00"
+  },
+  {
+   "id": "B0237",
+   "service": "injection",
+   "date": "2026-10-08",
+   "start": "19:30"
+  },
+  {
+   "id": "B0238",
+   "service": "injection",
+   "date": "2026-10-08",
+   "start": "20:00"
+  },
+  {
+   "id": "B0239",
+   "service": "revisit-consult",
+   "date": "2026-10-08",
+   "start": "20:30"
+  },
+  {
+   "id": "B0240",
+   "service": "first-consult",
+   "date": "2026-10-10",
+   "start": "10:00"
+  },
+  {
+   "id": "B0241",
+   "service": "injection",
+   "date": "2026-10-10",
+   "start": "10:00"
+  },
+  {
+   "id": "B0242",
+   "service": "scalp-care",
+   "date": "2026-10-10",
+   "start": "10:00"
+  },
+  {
+   "id": "B0243",
+   "service": "injection",
+   "date": "2026-10-10",
+   "start": "10:30"
+  },
+  {
+   "id": "B0244",
+   "service": "first-consult",
+   "date": "2026-10-10",
+   "start": "11:00"
+  },
+  {
+   "id": "B0245",
+   "service": "injection",
+   "date": "2026-10-10",
+   "start": "11:00"
+  },
+  {
+   "id": "B0246",
+   "service": "revisit-consult",
+   "date": "2026-10-10",
+   "start": "11:00"
+  },
+  {
+   "id": "B0247",
+   "service": "postop-visit",
+   "date": "2026-10-10",
+   "start": "11:30"
+  },
+  {
+   "id": "B0248",
+   "service": "scalp-care",
+   "date": "2026-10-10",
+   "start": "11:30"
+  },
+  {
+   "id": "B0249",
+   "service": "postop-visit",
+   "date": "2026-10-10",
+   "start": "12:00"
+  },
+  {
+   "id": "B0250",
+   "service": "revisit-consult",
+   "date": "2026-10-10",
+   "start": "12:00"
+  },
+  {
+   "id": "B0251",
+   "service": "first-consult",
+   "date": "2026-10-10",
+   "start": "13:00"
+  },
+  {
+   "id": "B0252",
+   "service": "first-consult",
+   "date": "2026-10-10",
+   "start": "13:00"
+  },
+  {
+   "id": "B0253",
+   "service": "injection",
+   "date": "2026-10-10",
+   "start": "13:00"
+  },
+  {
+   "id": "B0254",
+   "service": "injection",
+   "date": "2026-10-10",
+   "start": "14:00"
+  },
+  {
+   "id": "B0255",
+   "service": "scalp-care",
+   "date": "2026-10-10",
+   "start": "14:00"
+  },
+  {
+   "id": "B0256",
+   "service": "revisit-consult",
+   "date": "2026-10-10",
+   "start": "14:30"
+  },
+  {
+   "id": "B0257",
+   "service": "first-consult",
+   "date": "2026-10-12",
+   "start": "10:00"
+  },
+  {
+   "id": "B0258",
+   "service": "injection",
+   "date": "2026-10-12",
+   "start": "11:00"
+  },
+  {
+   "id": "B0259",
+   "service": "revisit-consult",
+   "date": "2026-10-12",
+   "start": "11:30"
+  },
+  {
+   "id": "B0260",
+   "service": "scalp-care",
+   "date": "2026-10-12",
+   "start": "11:30"
+  },
+  {
+   "id": "B0261",
+   "service": "injection",
+   "date": "2026-10-12",
+   "start": "12:30"
+  },
+  {
+   "id": "B0262",
+   "service": "injection",
+   "date": "2026-10-12",
+   "start": "14:00"
+  },
+  {
+   "id": "B0263",
+   "service": "injection",
+   "date": "2026-10-12",
+   "start": "14:30"
+  },
+  {
+   "id": "B0264",
+   "service": "revisit-consult",
+   "date": "2026-10-12",
+   "start": "15:00"
+  },
+  {
+   "id": "B0265",
+   "service": "injection",
+   "date": "2026-10-12",
+   "start": "15:30"
+  },
+  {
+   "id": "B0266",
+   "service": "revisit-consult",
+   "date": "2026-10-12",
+   "start": "16:00"
+  },
+  {
+   "id": "B0267",
+   "service": "scalp-care",
+   "date": "2026-10-12",
+   "start": "16:00"
+  },
+  {
+   "id": "B0268",
+   "service": "revisit-consult",
+   "date": "2026-10-12",
+   "start": "16:30"
+  },
+  {
+   "id": "B0269",
+   "service": "injection",
+   "date": "2026-10-12",
+   "start": "17:00"
+  },
+  {
+   "id": "B0270",
+   "service": "first-consult",
+   "date": "2026-10-12",
+   "start": "17:30"
+  },
+  {
+   "id": "B0271",
+   "service": "revisit-consult",
+   "date": "2026-10-12",
+   "start": "18:00"
+  },
+  {
+   "id": "B0272",
+   "service": "scalp-care",
+   "date": "2026-10-12",
+   "start": "18:00"
+  },
+  {
+   "id": "B0273",
+   "service": "postop-visit",
+   "date": "2026-10-12",
+   "start": "18:30"
+  },
+  {
+   "id": "B0274",
+   "service": "revisit-consult",
+   "date": "2026-10-12",
+   "start": "18:30"
+  },
+  {
+   "id": "B0275",
+   "service": "postop-visit",
+   "date": "2026-10-13",
+   "start": "10:00"
+  },
+  {
+   "id": "B0276",
+   "service": "surgery-half",
+   "date": "2026-10-13",
+   "start": "10:00",
+   "assigned": {
+    "doctor": "의료진 A"
+   }
+  },
+  {
+   "id": "B0277",
+   "service": "postop-visit",
+   "date": "2026-10-13",
+   "start": "10:30"
+  },
+  {
+   "id": "B0278",
+   "service": "revisit-consult",
+   "date": "2026-10-13",
+   "start": "11:00"
+  },
+  {
+   "id": "B0279",
+   "service": "scalp-care",
+   "date": "2026-10-13",
+   "start": "11:00"
+  },
+  {
+   "id": "B0280",
+   "service": "revisit-consult",
+   "date": "2026-10-13",
+   "start": "11:30"
+  },
+  {
+   "id": "B0281",
+   "service": "revisit-consult",
+   "date": "2026-10-13",
+   "start": "12:00"
+  },
+  {
+   "id": "B0282",
+   "service": "injection",
+   "date": "2026-10-13",
+   "start": "12:30"
+  },
+  {
+   "id": "B0283",
+   "service": "first-consult",
+   "date": "2026-10-13",
+   "start": "14:00"
+  },
+  {
+   "id": "B0284",
+   "service": "injection",
+   "date": "2026-10-13",
+   "start": "14:00"
+  },
+  {
+   "id": "B0285",
+   "service": "postop-visit",
+   "date": "2026-10-13",
+   "start": "14:00"
+  },
+  {
+   "id": "B0286",
+   "service": "first-consult",
+   "date": "2026-10-13",
+   "start": "14:30"
+  },
+  {
+   "id": "B0287",
+   "service": "surgery-half",
+   "date": "2026-10-13",
+   "start": "14:30",
+   "assigned": {
+    "doctor": "의료진 B"
+   }
+  },
+  {
+   "id": "B0288",
+   "service": "first-consult",
+   "date": "2026-10-13",
+   "start": "15:00"
+  },
+  {
+   "id": "B0289",
+   "service": "injection",
+   "date": "2026-10-13",
+   "start": "16:00"
+  },
+  {
+   "id": "B0290",
+   "service": "revisit-consult",
+   "date": "2026-10-13",
+   "start": "16:30"
+  },
+  {
+   "id": "B0291",
+   "service": "scalp-care",
+   "date": "2026-10-13",
+   "start": "16:30"
+  },
+  {
+   "id": "B0292",
+   "service": "revisit-consult",
+   "date": "2026-10-13",
+   "start": "17:00"
+  },
+  {
+   "id": "B0293",
+   "service": "injection",
+   "date": "2026-10-13",
+   "start": "17:30"
+  },
+  {
+   "id": "B0294",
+   "service": "revisit-consult",
+   "date": "2026-10-13",
+   "start": "18:00"
+  },
+  {
+   "id": "B0295",
+   "service": "scalp-care",
+   "date": "2026-10-13",
+   "start": "18:00"
+  },
+  {
+   "id": "B0296",
+   "service": "injection",
+   "date": "2026-10-13",
+   "start": "18:30"
+  },
+  {
+   "id": "B0297",
+   "service": "postop-visit",
+   "date": "2026-10-13",
+   "start": "18:30"
+  },
+  {
+   "id": "B0298",
+   "service": "postop-visit",
+   "date": "2026-10-14",
+   "start": "10:00"
+  },
+  {
+   "id": "B0299",
+   "service": "postop-visit",
+   "date": "2026-10-14",
+   "start": "10:30"
+  },
+  {
+   "id": "B0300",
+   "service": "postop-visit",
+   "date": "2026-10-14",
+   "start": "11:00"
+  },
+  {
+   "id": "B0301",
+   "service": "injection",
+   "date": "2026-10-14",
+   "start": "11:30"
+  },
+  {
+   "id": "B0302",
+   "service": "first-consult",
+   "date": "2026-10-14",
+   "start": "12:00"
+  },
+  {
+   "id": "B0303",
+   "service": "injection",
+   "date": "2026-10-14",
+   "start": "14:00"
+  },
+  {
+   "id": "B0304",
+   "service": "injection",
+   "date": "2026-10-14",
+   "start": "14:30"
+  },
+  {
+   "id": "B0305",
+   "service": "postop-visit",
+   "date": "2026-10-14",
+   "start": "15:00"
+  },
+  {
+   "id": "B0306",
+   "service": "revisit-consult",
+   "date": "2026-10-14",
+   "start": "15:30"
+  },
+  {
+   "id": "B0307",
+   "service": "scalp-care",
+   "date": "2026-10-14",
+   "start": "15:30"
+  },
+  {
+   "id": "B0308",
+   "service": "revisit-consult",
+   "date": "2026-10-14",
+   "start": "16:00"
+  },
+  {
+   "id": "B0309",
+   "service": "injection",
+   "date": "2026-10-14",
+   "start": "16:30"
+  },
+  {
+   "id": "B0310",
+   "service": "first-consult",
+   "date": "2026-10-14",
+   "start": "17:00"
+  },
+  {
+   "id": "B0311",
+   "service": "injection",
+   "date": "2026-10-14",
+   "start": "18:00"
+  },
+  {
+   "id": "B0312",
+   "service": "revisit-consult",
+   "date": "2026-10-14",
+   "start": "18:00"
+  },
+  {
+   "id": "B0313",
+   "service": "scalp-care",
+   "date": "2026-10-14",
+   "start": "18:00"
+  },
+  {
+   "id": "B0314",
+   "service": "injection",
+   "date": "2026-10-14",
+   "start": "18:30"
+  },
+  {
+   "id": "B0315",
+   "service": "revisit-consult",
+   "date": "2026-10-14",
+   "start": "18:30"
+  },
+  {
+   "id": "B0316",
+   "service": "first-consult",
+   "date": "2026-10-15",
+   "start": "10:00"
+  },
+  {
+   "id": "B0317",
+   "service": "injection",
+   "date": "2026-10-15",
+   "start": "10:30"
+  },
+  {
+   "id": "B0318",
+   "service": "scalp-care",
+   "date": "2026-10-15",
+   "start": "10:30"
+  },
+  {
+   "id": "B0319",
+   "service": "injection",
+   "date": "2026-10-15",
+   "start": "11:00"
+  },
+  {
+   "id": "B0320",
+   "service": "revisit-consult",
+   "date": "2026-10-15",
+   "start": "11:00"
+  },
+  {
+   "id": "B0321",
+   "service": "first-consult",
+   "date": "2026-10-15",
+   "start": "11:30"
+  },
+  {
+   "id": "B0322",
+   "service": "injection",
+   "date": "2026-10-15",
+   "start": "11:30"
+  },
+  {
+   "id": "B0323",
+   "service": "postop-visit",
+   "date": "2026-10-15",
+   "start": "11:30"
+  },
+  {
+   "id": "B0324",
+   "service": "revisit-consult",
+   "date": "2026-10-15",
+   "start": "12:00"
+  },
+  {
+   "id": "B0325",
+   "service": "scalp-care",
+   "date": "2026-10-15",
+   "start": "12:00"
+  },
+  {
+   "id": "B0326",
+   "service": "injection",
+   "date": "2026-10-15",
+   "start": "12:30"
+  },
+  {
+   "id": "B0327",
+   "service": "postop-visit",
+   "date": "2026-10-15",
+   "start": "12:30"
+  },
+  {
+   "id": "B0328",
+   "service": "first-consult",
+   "date": "2026-10-15",
+   "start": "14:00"
+  },
+  {
+   "id": "B0329",
+   "service": "injection",
+   "date": "2026-10-15",
+   "start": "14:00"
+  },
+  {
+   "id": "B0330",
+   "service": "revisit-consult",
+   "date": "2026-10-15",
+   "start": "14:00"
+  },
+  {
+   "id": "B0331",
+   "service": "injection",
+   "date": "2026-10-15",
+   "start": "14:30"
+  },
+  {
+   "id": "B0332",
+   "service": "first-consult",
+   "date": "2026-10-15",
+   "start": "15:00"
+  },
+  {
+   "id": "B0333",
+   "service": "first-consult",
+   "date": "2026-10-15",
+   "start": "15:00"
+  },
+  {
+   "id": "B0334",
+   "service": "injection",
+   "date": "2026-10-15",
+   "start": "15:00"
+  },
+  {
+   "id": "B0335",
+   "service": "revisit-consult",
+   "date": "2026-10-15",
+   "start": "16:00"
+  },
+  {
+   "id": "B0336",
+   "service": "revisit-consult",
+   "date": "2026-10-15",
+   "start": "16:00"
+  },
+  {
+   "id": "B0337",
+   "service": "scalp-care",
+   "date": "2026-10-15",
+   "start": "16:00"
+  },
+  {
+   "id": "B0338",
+   "service": "injection",
+   "date": "2026-10-15",
+   "start": "16:30"
+  },
+  {
+   "id": "B0339",
+   "service": "postop-visit",
+   "date": "2026-10-15",
+   "start": "16:30"
+  },
+  {
+   "id": "B0340",
+   "service": "injection",
+   "date": "2026-10-15",
+   "start": "17:30"
+  },
+  {
+   "id": "B0341",
+   "service": "injection",
+   "date": "2026-10-15",
+   "start": "18:30"
+  },
+  {
+   "id": "B0342",
+   "service": "revisit-consult",
+   "date": "2026-10-15",
+   "start": "18:30"
+  },
+  {
+   "id": "B0343",
+   "service": "scalp-care",
+   "date": "2026-10-15",
+   "start": "18:30"
+  },
+  {
+   "id": "B0344",
+   "service": "revisit-consult",
+   "date": "2026-10-15",
+   "start": "19:00"
+  },
+  {
+   "id": "B0345",
+   "service": "scalp-care",
+   "date": "2026-10-15",
+   "start": "19:30"
+  },
+  {
+   "id": "B0346",
+   "service": "injection",
+   "date": "2026-10-15",
+   "start": "20:30"
+  },
+  {
+   "id": "B0347",
+   "service": "injection",
+   "date": "2026-10-17",
+   "start": "10:00"
+  },
+  {
+   "id": "B0348",
+   "service": "scalp-care",
+   "date": "2026-10-17",
+   "start": "10:30"
+  },
+  {
+   "id": "B0349",
+   "service": "first-consult",
+   "date": "2026-10-17",
+   "start": "11:00"
+  },
+  {
+   "id": "B0350",
+   "service": "revisit-consult",
+   "date": "2026-10-17",
+   "start": "11:00"
+  },
+  {
+   "id": "B0351",
+   "service": "first-consult",
+   "date": "2026-10-17",
+   "start": "11:30"
+  },
+  {
+   "id": "B0352",
+   "service": "injection",
+   "date": "2026-10-17",
+   "start": "11:30"
+  },
+  {
+   "id": "B0353",
+   "service": "first-consult",
+   "date": "2026-10-17",
+   "start": "12:00"
+  },
+  {
+   "id": "B0354",
+   "service": "injection",
+   "date": "2026-10-17",
+   "start": "12:00"
+  },
+  {
+   "id": "B0355",
+   "service": "scalp-care",
+   "date": "2026-10-17",
+   "start": "12:00"
+  },
+  {
+   "id": "B0356",
+   "service": "revisit-consult",
+   "date": "2026-10-17",
+   "start": "12:30"
+  },
+  {
+   "id": "B0357",
+   "service": "injection",
+   "date": "2026-10-17",
+   "start": "13:00"
+  },
+  {
+   "id": "B0358",
+   "service": "postop-visit",
+   "date": "2026-10-17",
+   "start": "13:00"
+  },
+  {
+   "id": "B0359",
+   "service": "postop-visit",
+   "date": "2026-10-17",
+   "start": "13:30"
+  },
+  {
+   "id": "B0360",
+   "service": "revisit-consult",
+   "date": "2026-10-17",
+   "start": "13:30"
+  },
+  {
+   "id": "B0361",
+   "service": "scalp-care",
+   "date": "2026-10-17",
+   "start": "13:30"
+  },
+  {
+   "id": "B0362",
+   "service": "first-consult",
+   "date": "2026-10-17",
+   "start": "14:00"
+  },
+  {
+   "id": "B0363",
+   "service": "injection",
+   "date": "2026-10-17",
+   "start": "14:00"
+  },
+  {
+   "id": "B0364",
+   "service": "revisit-consult",
+   "date": "2026-10-19",
+   "start": "10:00"
+  },
+  {
+   "id": "B0365",
+   "service": "surgery-full",
+   "date": "2026-10-19",
+   "start": "10:00",
+   "assigned": {
+    "doctor": "의료진 A"
+   }
+  },
+  {
+   "id": "B0366",
+   "service": "postop-visit",
+   "date": "2026-10-19",
+   "start": "10:30"
+  },
+  {
+   "id": "B0367",
+   "service": "injection",
+   "date": "2026-10-19",
+   "start": "11:00"
+  },
+  {
+   "id": "B0368",
+   "service": "injection",
+   "date": "2026-10-19",
+   "start": "11:30"
+  },
+  {
+   "id": "B0369",
+   "service": "injection",
+   "date": "2026-10-19",
+   "start": "12:00"
+  },
+  {
+   "id": "B0370",
+   "service": "injection",
+   "date": "2026-10-19",
+   "start": "12:30"
+  },
+  {
+   "id": "B0371",
+   "service": "first-consult",
+   "date": "2026-10-19",
+   "start": "14:00"
+  },
+  {
+   "id": "B0372",
+   "service": "scalp-care",
+   "date": "2026-10-19",
+   "start": "14:30"
+  },
+  {
+   "id": "B0373",
+   "service": "revisit-consult",
+   "date": "2026-10-19",
+   "start": "15:00"
+  },
+  {
+   "id": "B0374",
+   "service": "injection",
+   "date": "2026-10-19",
+   "start": "15:30"
+  },
+  {
+   "id": "B0375",
+   "service": "revisit-consult",
+   "date": "2026-10-19",
+   "start": "16:00"
+  },
+  {
+   "id": "B0376",
+   "service": "scalp-care",
+   "date": "2026-10-19",
+   "start": "16:00"
+  },
+  {
+   "id": "B0377",
+   "service": "revisit-consult",
+   "date": "2026-10-19",
+   "start": "16:30"
+  },
+  {
+   "id": "B0378",
+   "service": "postop-visit",
+   "date": "2026-10-19",
+   "start": "17:00"
+  },
+  {
+   "id": "B0379",
+   "service": "first-consult",
+   "date": "2026-10-19",
+   "start": "17:30"
+  },
+  {
+   "id": "B0380",
+   "service": "postop-visit",
+   "date": "2026-10-19",
+   "start": "18:00"
+  },
+  {
+   "id": "B0381",
+   "service": "scalp-care",
+   "date": "2026-10-19",
+   "start": "18:00"
+  },
+  {
+   "id": "B0382",
+   "service": "revisit-consult",
+   "date": "2026-10-19",
+   "start": "18:30"
+  },
+  {
+   "id": "B0383",
+   "service": "revisit-consult",
+   "date": "2026-10-19",
+   "start": "18:30"
+  },
+  {
+   "id": "B0384",
+   "service": "surgery-full",
+   "date": "2026-10-20",
+   "start": "10:00",
+   "assigned": {
+    "doctor": "의료진 B"
+   }
+  },
+  {
+   "id": "B0385",
+   "service": "surgery-half",
+   "date": "2026-10-21",
+   "start": "10:00",
+   "assigned": {
+    "doctor": "의료진 A"
+   }
+  },
+  {
+   "id": "B0386",
+   "service": "surgery-full",
+   "date": "2026-10-22",
+   "start": "10:00",
+   "assigned": {
+    "doctor": "의료진 B"
+   }
+  },
+  {
+   "id": "B0387",
+   "service": "surgery-full",
+   "date": "2026-10-26",
+   "start": "10:00",
+   "assigned": {
+    "doctor": "의료진 A"
+   }
+  },
+  {
+   "id": "B0388",
+   "service": "surgery-half",
+   "date": "2026-10-28",
+   "start": "14:30",
+   "assigned": {
+    "doctor": "의료진 B"
+   }
+  },
+  {
+   "id": "B0389",
+   "service": "surgery-full",
+   "date": "2026-10-29",
+   "start": "10:00",
+   "assigned": {
+    "doctor": "의료진 A"
+   }
+  },
+  {
+   "id": "B0390",
+   "service": "surgery-full",
+   "date": "2026-10-30",
+   "start": "10:00",
+   "assigned": {
+    "doctor": "의료진 B"
+   }
+  },
+  {
+   "id": "B0391",
+   "service": "surgery-full",
+   "date": "2026-11-02",
+   "start": "10:00",
+   "assigned": {
+    "doctor": "의료진 A"
+   }
+  }
+ ],
+ "exceptions": [
+  {
+   "date": "2026-09-30",
+   "resource": "doctor",
+   "delta": -1,
+   "note": "의료진 1명 휴무(합성)"
+  }
+ ]
+}
