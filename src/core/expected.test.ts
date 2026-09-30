@@ -8,7 +8,7 @@ import { findSlots } from "./slots";
  * (빈 칸인지, 아니면 떨어진 까닭 집합)을 내는지 한 행씩 본다. 휴진일은 날짜당 한 행(휴진 / 공휴일 미확인).
  *
  * 한계: 같은 AI가 같은 문서를 해석했으므로 해석 실수(접수 마감 포함, 점심 맞닿기, 리드 올림)는 둘이 함께 틀릴 수 있다.
- * 기대값은 "AI가 계산, 오너 검수 전"이다.
+ * 기대값은 "AI가 계산, 사람 검수 전"이다.
  */
 
 type Row = [string, string | null, string[]];
@@ -31,7 +31,7 @@ function engineRows(service: string, base: string): Row[] {
 
 describe("별도 구현(파이썬) 대조", () => {
   it("기대값은 검수 전이라고 적혀 있다", () => {
-    expect(X.status).toBe("AI가 계산, 오너 검수 전");
+    expect(X.status).toBe("AI가 계산, 사람 검수 전");
     expect(Object.keys(X.bases)).toHaveLength(5);
   });
 

@@ -27,7 +27,7 @@ export function EvalScreen({ stepMinutes = EVAL_STEP_MINUTES }: { stepMinutes?: 
       <h1>평가</h1>
       <div className="note warn">
         <p>
-          <strong>모두 합성 데이터 기준입니다.</strong> 규칙 문서(B01)·합성 예약·엔진·검사기·기대값을 같은 도구(Claude Code)로 만들었고, <strong>기대값(경계 사례 표·규칙 해석)은 AI 작성·오너 검수 전</strong>입니다. 두 구현이 같은 문서를 같은 쪽으로 잘못 읽은 해석 실수(접수 마감 포함, 점심 맞닿음)는 여기 숫자로 잡히지 않습니다. 못 미쳐도 그대로 싣습니다.
+          <strong>모두 합성 데이터 기준입니다.</strong> 규칙 문서(B01)·합성 예약·엔진·검사기·기대값을 같은 도구(Claude Code)로 만들었고, <strong>기대값(경계 사례 표·규칙 해석)은 AI 작성·사람 검수 전</strong>입니다. 두 구현이 같은 문서를 같은 쪽으로 잘못 읽은 해석 실수(접수 마감 포함, 점심 맞닿음)는 여기 숫자로 잡히지 않습니다. 못 미쳐도 그대로 싣습니다.
         </p>
       </div>
 
@@ -60,9 +60,9 @@ export function EvalScreen({ stepMinutes = EVAL_STEP_MINUTES }: { stepMinutes?: 
               </td>
             </tr>
             <tr>
-              <th>오너 손 검수</th>
+              <th>사람 손 검수</th>
               <td className="num">미실시</td>
-              <td className="small">사람이 달력과 예약표로 확인한 행 0 / 20(오너 몫, 목표가 아님)</td>
+              <td className="small">사람이 달력과 예약표로 확인한 행 0 / 20(사람 몫, 목표가 아님)</td>
             </tr>
           </tbody>
         </table>

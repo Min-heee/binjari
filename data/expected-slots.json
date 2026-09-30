@@ -1,4 +1,4 @@
-{"status":"AI가 계산, 오너 검수 전","source":"data/scripts/slots_expected.py (앱 코드를 쓰지 않음)","bases":{"2026-09-21T10:00:00+09:00":{"first-consult":[["2026-09-21","10:00",["before-earliest","resource"]],
+{"status":"AI가 계산, 사람 검수 전","source":"data/scripts/slots_expected.py (앱 코드를 쓰지 않음)","bases":{"2026-09-21T10:00:00+09:00":{"first-consult":[["2026-09-21","10:00",["before-earliest","resource"]],
 ["2026-09-21","10:30",["before-earliest"]],
 ["2026-09-21","11:00",[]],
 ["2026-09-21","11:30",[]],

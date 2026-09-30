@@ -6,8 +6,8 @@
 볼트 문서 셋의 json(vault/booking-slots.md B01, vault/hours-location.md V02, vault/holidays.md B02)과
 data/bookings.json만 다시 읽어, 모든 시작 후보를 분 단위로 검사한다(자원은 매 분 동시 사용량 ≤ 수량).
 
-결과는 "AI가 계산, 오너 검수 전"이다. 같은 AI가 같은 문서를 읽고 썼으므로 구현 실수는 잡아도
-해석 실수(접수 마감 포함 여부, 점심과 맞닿기, 60분 리드 올림)는 못 잡는다. 그건 오너 손 검수 몫이다.
+결과는 "AI가 계산, 사람 검수 전"이다. 같은 AI가 같은 문서를 읽고 썼으므로 구현 실수는 잡아도
+해석 실수(접수 마감 포함 여부, 점심과 맞닿기, 60분 리드 올림)는 못 잡는다. 그건 사람 손 검수 몫이다.
 
 실행(저장소 루트에서): python3 data/scripts/slots_expected.py
 출력: data/expected-slots.json — src/core/expected.test.ts가 엔진 결과와 한 행씩 비교한다.
@@ -198,7 +198,7 @@ def evaluate(service, base_date, base_min):
 
 if __name__ == "__main__":
     out = {
-        "status": "AI가 계산, 오너 검수 전",
+        "status": "AI가 계산, 사람 검수 전",
         "source": "data/scripts/slots_expected.py (앱 코드를 쓰지 않음)",
         "bases": {},
     }

@@ -267,9 +267,9 @@ describe("평가", () => {
   // 화면은 10분 간격(빌드 때 한 번). 시험은 같은 컴포넌트를 6시간 간격으로 그려 모양만 본다.
   const t = text(renderToStaticMarkup(<EvalScreen stepMinutes={360} />));
   it("편향·검수 전을 맨 위에, 하지 않은 것은 미실시로", () => {
-    expect(t.indexOf("AI 작성·오너 검수 전")).toBeLessThan(t.indexOf("규칙 위반"));
+    expect(t.indexOf("AI 작성·사람 검수 전")).toBeLessThan(t.indexOf("규칙 위반"));
     expect(t).toContain("별도 구현 대조 3,580 / 3,580행");
-    expect(t).toContain("오너 손 검수 미실시");
+    expect(t).toContain("사람 손 검수 미실시");
   });
   it("규칙 위반 0건과 분모, 경계 사례, 결정성, 조작 수", () => {
     expect(t).toContain("규칙 위반(따로 짠 검사기) 0건");
