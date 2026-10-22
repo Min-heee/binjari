@@ -399,6 +399,10 @@ function classify(ctx: Ctx, s: ServiceRule, d: LocalDate, day: DayCheckResult, c
   if (isSurgery(s) && day.reasons.has("before-earliest")) return { kind: "too-soon", message: `수술은 기준일 + ${ctx.engine.rules.surgeryMinDaysAhead}일부터[가정]` };
   if (d === ctx.today) return { kind: "today-none", message: todayNoneMessage(ctx, d) };
   if (candidates.every((c) => c.reasons.includes("before-earliest"))) return { kind: "today-none", message: "첫 예약 가능 시각 전" };
+  // 시작 칸마다 진료 종료나 접수 마감을 넘기면(토요일 단축 진료에 하루짜리 수술 등) 예약과 상관없이 안 되는 날이다 — '꽉 참'이 아니다.
+  // (진료 종료 뒤에는 사람·방 수가 0이라 자원 부족도 함께 붙는다.)
+  if (candidates.length > 0 && candidates.every((c) => c.reasons.includes("past-close") || c.reasons.includes("after-last-entry")))
+    return { kind: "service-unavailable", message: "진료시간 안에 끝나지 않음" };
   return { kind: "full", message: "예약 꽉 참" };
 }
 

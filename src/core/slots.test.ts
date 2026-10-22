@@ -222,6 +222,12 @@ describe("수술 날 조건(②)", () => {
     expect(s1005.date).toBe("2026-10-06");
     expect(s1005.tags).toEqual(["다음 날 내원 10/7(수)"]);
   });
+  it("예약이 없어도 진료시간 안에 끝나지 않는 날은 '꽉 참'이 아니라 '진료시간 안에 끝나지 않음'", () => {
+    const e = engineWithB01((j) => ((j.services as Record<string, { starts: string[] }>)["surgery-full"].starts = ["17:00"]));
+    const r = ok(findSlots(e, { service: "surgery-full", nowMs: NOW, schedule: EMPTY }));
+    expect(r.days.filter((d) => d.kind === "full")).toEqual([]);
+    expect(r.days.find((d) => d.date === "2026-09-28")).toMatchObject({ kind: "service-unavailable", message: "진료시간 안에 끝나지 않음" });
+  });
   it("다음 날 조건이 없는 의원이면 '다음 날 내원'을 붙이지 않는다(휴진일을 내원일로 안내하지 않게)", () => {
     const e = engineWithB01((j) => ((j.surgeryFollowUps as { nextDayMustBeOpen: boolean }).nextDayMustBeOpen = false));
     const r = ok(findSlots(e, { service: "surgery-full", nowMs: NOW, schedule: EMPTY }));

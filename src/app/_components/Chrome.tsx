@@ -77,24 +77,31 @@ export function Chrome() {
             ))}
           </nav>
         </div>
-        <details className="tools">
-          <summary>{src?.clinicName ?? "샘플의원"} 네 도구</summary>
-          <p>
-            {TOOLS_LINE.map((t, i) => (
-              <span key={t.name}>
-                {i > 0 && " · "}
-                {t.self ? (
-                  <strong>
-                    {t.name}({t.role})
-                  </strong>
-                ) : (
-                  `${t.name}(${t.role})`
-                )}
-              </span>
-            ))}
-            {FEED_MODE ? ". 이 화면은 품은 앱이 넘겨준 예약·기준 시각으로 돕니다." : ". 도구끼리 연동은 없습니다."}
-          </p>
-        </details>
+        {FEED_MODE ? (
+          <details className="tools">
+            <summary>{src?.clinicName ? `${src.clinicName} · 빈자리` : "빈자리"}</summary>
+            <p>다른 앱(한창구)에 품은 빈자리입니다. 이 화면은 품은 앱이 넘겨준 예약·기준 시각으로 돕니다.</p>
+          </details>
+        ) : (
+          <details className="tools">
+            <summary>샘플의원 네 도구</summary>
+            <p>
+              {TOOLS_LINE.map((t, i) => (
+                <span key={t.name}>
+                  {i > 0 && " · "}
+                  {t.self ? (
+                    <strong>
+                      {t.name}({t.role})
+                    </strong>
+                  ) : (
+                    `${t.name}(${t.role})`
+                  )}
+                </span>
+              ))}
+              . 도구끼리 연동은 없습니다.
+            </p>
+          </details>
+        )}
       </header>
     </>
   );

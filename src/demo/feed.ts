@@ -13,8 +13,31 @@ export const FEED_MODE = process.env.NEXT_PUBLIC_BINJARI_FEED === "1";
 export const FEED_SRC = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/feed.js`;
 /** feed.js가 값을 넣은 뒤 보내는 이벤트. 화면은 이것을 기다린다. */
 export const FEED_EVENT = "binjari-feed";
-/** 이만큼 기다려도 feed.js가 없으면 오류 화면을 보인다. */
+/** 품은 앱이 "다시 읽어"라고 보내는 이벤트(탭을 다시 열 때 등). 통화 중 화면 상태는 그대로 두고 값만 바꾼다. */
+export const FEED_REFRESH_EVENT = "binjari-refresh";
+/** 이만큼 기다려도 feed.js가 없으면 오류 화면을 보인다. 늦게라도 오면 그때 다시 그린다. */
 export const FEED_WAIT_MS = 4000;
+/** 열어 둔 채로도 기준 시각이 멈추지 않게 이만큼마다 다시 읽는다. */
+export const FEED_REFRESH_MS = 60_000;
+
+let requests = 0;
+
+/** feed.js를 (다시) 불러온다. 받은 쪽(feed.js)이 값을 넣고 FEED_EVENT를 보낸다. 브라우저에서만 의미가 있다. */
+export function requestFeed(): void {
+  if (typeof document === "undefined") return;
+  const el = document.createElement("script");
+  requests += 1;
+  el.src = `${FEED_SRC}?r=${requests}`;
+  el.async = true;
+  el.onload = el.onerror = () => el.remove();
+  document.head.appendChild(el);
+}
+
+/** 지금 들어 있는 바깥 입력 객체(새로 읽을 때마다 다른 객체). 서버(빌드)에서는 null. */
+export function currentFeedObject(): unknown {
+  if (typeof window === "undefined") return null;
+  return (globalThis as { __BINJARI_FEED__?: unknown }).__BINJARI_FEED__;
+}
 
 export interface Feed {
   nowMs: number;

@@ -1,7 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
 import type { ReactNode } from "react";
-import { FEED_MODE, FEED_SRC } from "@/demo/feed";
 import { Chrome } from "./_components/Chrome";
 import "./globals.css";
 
@@ -16,7 +14,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ko">
       <body>
-        {FEED_MODE && <Script src={FEED_SRC} strategy="beforeInteractive" />}
         <Chrome />
         <main>{children}</main>
       </body>

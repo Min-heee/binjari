@@ -104,10 +104,17 @@ export function composeReadout(engine: Engine, args: { service: string; slots: S
     const price = engine.prices[s.deposit];
     if (!price) return { ok: false, errors: [`V03 가격표에 ${s.deposit}가 없습니다`] };
     parts.push(tpl(engine, `readout-deposit-${s.key}`, { deposit: formatWon(price.price) }));
-    // 수술은 의료진 확인까지 한 문장. 그 밖에는 오늘·다음 영업일 칸이 하나라도 있으면 "1영업일 안에"를 빼고 가까운 날짜 문장(PRD F6·C4).
-    const close = s.earliest === "surgery" ? "readout-close-surgery" : args.slots.some((x) => x.urgentDeposit) ? "readout-close-deposit-near" : "readout-close-deposit";
-    parts.push(tpl(engine, close, {}));
-  } else parts.push(tpl(engine, "readout-close-no-deposit", {}));
+  }
+  // 수술은 (예약금이 없는 의원이어도) 의료진 확인까지 한 문장. 그 밖에는 오늘·다음 영업일 칸이 하나라도 있으면 "1영업일 안에"를 빼고 가까운 날짜 문장(PRD F6·C4).
+  const close =
+    s.earliest === "surgery"
+      ? "readout-close-surgery"
+      : s.deposit === null
+        ? "readout-close-no-deposit"
+        : args.slots.some((x) => x.urgentDeposit)
+          ? "readout-close-deposit-near"
+          : "readout-close-deposit";
+  parts.push(tpl(engine, close, {}));
   return finish(engine, parts);
 }
 

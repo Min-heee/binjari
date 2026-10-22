@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { localDate } from "./calendar";
-import { EMPTY, engine, NOW, TODAY } from "./__fixtures__/load";
+import { EMPTY, engine, engineWithB01, NOW, TODAY } from "./__fixtures__/load";
 import { makeHold } from "./holds";
 import { accountNote, composeClosed, composeConfirmation, composeHoldLine, composeReadout, fillTemplate, formatWon, readDate, readTime } from "./message";
 import { findSlots, suggestSlots, type Slot } from "./slots";
@@ -162,5 +162,22 @@ describe("fillTemplate", () => {
     expect(fillTemplate("{{date}} {{time}}", { date: "9/22" })).toEqual({ ok: false, errors: ["칸 값이 없습니다: {{time}}"] });
     expect(fillTemplate("{{name}}", {})).toEqual({ ok: false, errors: ["모르는 칸입니다: {{name}}"] });
     expect(fillTemplate("{{ date }}!", { date: "9/22" })).toEqual({ ok: true, text: "9/22!" });
+  });
+});
+
+describe("예약금 없는 의원의 수술", () => {
+  it("예약금이 없어도 수술은 수술 확정 문장으로 끝난다(예약금 없는 안건 문장이 아니라)", () => {
+    const e = engineWithB01((j) => {
+      const services = j.services as Record<string, { deposit: string | null }>;
+      services["surgery-full"].deposit = null;
+    });
+    const r = findSlots(e, { service: "surgery-full", nowMs: NOW, schedule: EMPTY });
+    if (!r.ok) throw new Error(r.errors.join());
+    const out = composeReadout(e, { service: "surgery-full", slots: suggestSlots(e, r.slots), today: TODAY });
+    expect(out.ok).toBe(true);
+    if (!out.ok) return;
+    const templates = e.rules.templates as Record<string, string>;
+    expect(out.text.endsWith(templates["readout-close-surgery"])).toBe(true);
+    expect(out.text).not.toContain(templates["readout-close-no-deposit"]);
   });
 });

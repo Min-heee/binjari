@@ -9,7 +9,7 @@ import { kstDateOf } from "@/core/calendar";
 import { loadEngine, type Engine } from "@/core/engine";
 import { parseSchedule, type Schedule } from "@/core/schedule";
 import { DEMO_NOW_MS, DEMO_TODAY } from "./clock";
-import { FEED_MODE, readFeed } from "./feed";
+import { currentFeedObject, FEED_MODE, readFeed } from "./feed";
 
 export type DemoData = { ok: true; engine: Engine; schedule: Schedule } | { ok: false; errors: string[] };
 
@@ -33,6 +33,8 @@ export interface DemoSource {
 }
 
 let cached: DemoSource | undefined;
+/** cached를 만든 바깥 입력. feed.js를 다시 읽으면 새 객체가 들어오므로 그때 다시 만든다. */
+let cachedFrom: unknown = null;
 
 function loadSource(): DemoSource {
   const f = FEED_MODE ? readFeed() : null;
@@ -41,9 +43,13 @@ function loadSource(): DemoSource {
   return { data: loadDemoFrom(f.feed.bookings, kstDateOf(f.feed.nowMs), "feed.js bookings"), nowMs: f.feed.nowMs, clinicName: f.feed.clinicName, sourceLabel: f.feed.sourceLabel };
 }
 
-/** 화면용: 한 번만 읽는다(볼트 파싱·광고 표현 검사가 화면을 그릴 때마다 돌지 않게). */
+/** 화면용: 입력이 같으면 한 번만 읽는다(볼트 파싱·광고 표현 검사가 화면을 그릴 때마다 돌지 않게). */
 export function demoSource(): DemoSource {
-  cached ??= loadSource();
+  const from = FEED_MODE ? currentFeedObject() : null;
+  if (cached === undefined || from !== cachedFrom) {
+    cached = loadSource();
+    cachedFrom = from;
+  }
   return cached;
 }
 
