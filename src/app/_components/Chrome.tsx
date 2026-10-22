@@ -9,8 +9,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { liveHolds } from "@/core/holds";
 import { bandText } from "@/demo/call";
-import { DEMO_NOW_MS } from "@/demo/clock";
-import { demo, mustDemo } from "@/demo/data";
+import { demo, demoNowMs, demoSource, mustDemo } from "@/demo/data";
+import { FEED_MODE } from "@/demo/feed";
+import { useClientReady } from "../_lib/useClientReady";
 import { useHolds } from "../_lib/useHolds";
 
 // short는 휴대폰 폭에서 쓰는 이름. 320px에서도 세 탭이 한 줄에 들어가게.
@@ -36,7 +37,7 @@ export function isActiveTab(href: string, path: string): boolean {
 function HoldCount() {
   const { engine } = mustDemo();
   const { holds, blocked, dropped } = useHolds();
-  const n = liveHolds(engine, holds, DEMO_NOW_MS).length;
+  const n = liveHolds(engine, holds, demoNowMs()).length;
   // 0건이면 띠 한 줄을 아낀다(휴대폰 첫 화면에 결과 첫 칩 줄이 들어오게). 띠 글자에 "가예약은 이 기기에서만"은 늘 있다.
   if (n === 0 && !blocked && !dropped) return null;
   return (
@@ -50,12 +51,14 @@ function HoldCount() {
 
 export function Chrome() {
   const path = usePathname() ?? "/";
-  const d = demo();
+  const ready = useClientReady();
+  const d = ready ? demo() : null;
+  const src = ready ? demoSource() : null;
   return (
     <>
       <div className="band" role="note" aria-label="시연 안내">
-        <strong>{d.ok ? bandText(d.engine, DEMO_NOW_MS) : "가상 의원 · 합성 예약 · 규칙 오류로 멈춤"}</strong>
-        {d.ok && <HoldCount />}
+        <strong>{d === null ? "불러오는 중…" : d.ok ? bandText(d.engine, demoNowMs(), src?.clinicName ? { clinic: `가상 의원(${src.clinicName})`, source: src.sourceLabel ?? "" } : undefined) : FEED_MODE ? "가상 의원 · 바깥 예약 입력 · 규칙·입력 오류로 멈춤" : "가상 의원 · 합성 예약 · 규칙 오류로 멈춤"}</strong>
+        {d?.ok && <HoldCount />}
       </div>
       <header className="top">
         <div className="top-row">
@@ -75,7 +78,7 @@ export function Chrome() {
           </nav>
         </div>
         <details className="tools">
-          <summary>샘플의원 네 도구</summary>
+          <summary>{src?.clinicName ?? "샘플의원"} 네 도구</summary>
           <p>
             {TOOLS_LINE.map((t, i) => (
               <span key={t.name}>
@@ -89,7 +92,7 @@ export function Chrome() {
                 )}
               </span>
             ))}
-            . 도구끼리 연동은 없습니다.
+            {FEED_MODE ? ". 이 화면은 품은 앱이 넘겨준 예약·기준 시각으로 돕니다." : ". 도구끼리 연동은 없습니다."}
           </p>
         </details>
       </header>

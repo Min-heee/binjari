@@ -26,7 +26,7 @@ export interface DocRow {
 const USE: Record<string, string> = {
   B01: "예약 칸 규칙 — 소요 시간 단계, 사람·방 수, 준비 시간, 하루 최대, 첫 예약 가능 시각, 찾는 기간, 가예약, 버튼·질문, 문장 틀",
   B02: "공휴일 목록과 확인 기간(다시봄 D01에서 옮김)",
-  V02: "진료시간, 점심, 접수 마감, 토요일 수술 없음, 휴진·임시 휴진",
+  V02: "진료시간, 점심, 접수 마감, 수술 없는 요일, 휴진·임시 휴진",
   V03: "예약금 금액",
   V15: "광고 표현 검사(문장 틀)",
 };
@@ -59,7 +59,7 @@ export function hoursRows(engine: Engine): [string, string][] {
   }).join(" · ");
   return [
     ["요일별 진료", weekly],
-    ["점심(접수·전화 응대 없음)", `${h.lunch.start}~${h.lunch.end} · ${h.lunch.days.map(dow).join("")}요일 (그 밖의 요일은 점심 없음)`],
+    ["점심(접수·전화 응대 없음)", h.lunch.days.length === 0 ? "없음" : `${h.lunch.start}~${h.lunch.end} · ${h.lunch.days.map(dow).join("")}요일 (그 밖의 요일은 점심 없음)`],
     ["접수 마감", `진료 종료 ${h.lastEntryMinutesBeforeClose}분 전까지 시작(포함)`],
     ["수술 없는 요일", h.noSurgeryDays.map((d) => `${dow(d)}요일`).join(", ") || "없음"],
     ["법정 공휴일", h.closedOnPublicHolidays ? "휴진" : "진료"],
@@ -121,7 +121,7 @@ export function otherRows(engine: Engine): [string, string][] {
       `${r.surgeryFollowUps.nextDayMustBeOpen ? "다음 날이 진료일이어야 함" : "다음 날 조건 없음"} · D+${r.surgeryFollowUps.d7Window.from}~D+${r.surgeryFollowUps.d7Window.to}에 진료일 하나 이상`,
     ],
     ["수술 취소·변경 안내 표시", `수술일이 기준일 + ${r.surgeryCancelNoticeDays}일 안`],
-    ["주사 회차 옮기기 창", `예정일 앞 ${r.injectionMoveWindow.before}일 · 뒤 ${r.injectionMoveWindow.after}일`],
+    ...(r.services.injection ? [["주사 회차 옮기기 창", `예정일 앞 ${r.injectionMoveWindow.before}일 · 뒤 ${r.injectionMoveWindow.after}일`] as [string, string]] : []),
     ["가예약 유지", `다음 영업일 진료 종료까지${r.hold.capAtSlotStart ? ", 칸 시작을 넘지 않음" : ""} · 풀리기 ${r.hold.warnMinutesBefore}분 전 경고`],
     ["영업일", r.businessDaysIncludeSaturday ? "진료일(토요일 포함)" : "진료일(토요일 제외)"],
     ["제안 칸", `${r.suggestCount}칸 — 가장 빠른 칸, 그다음 날짜나 시간대가 다른 가장 빠른 칸`],

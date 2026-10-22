@@ -6,6 +6,7 @@
 import { formatShort } from "@/core/calendar";
 import { REASON_LABEL } from "@/core/slots";
 import { demo } from "@/demo/data";
+import { FEED_MODE } from "@/demo/feed";
 import { buildReport, reasonText, sweepRangeText } from "@/demo/evaluate";
 import { ErrorPanel } from "./ErrorPanel";
 
@@ -15,6 +16,13 @@ export const EVAL_STEP_MINUTES = 10;
 const ratio = (a: number, b: number) => `${a.toLocaleString("ko-KR")} / ${b.toLocaleString("ko-KR")}`;
 
 export function EvalScreen({ stepMinutes = EVAL_STEP_MINUTES }: { stepMinutes?: number }) {
+  if (FEED_MODE)
+    return (
+      <div className="eval">
+        <h1>평가</h1>
+        <p className="note warn">이 빌드는 바깥 입력(기준 시각·예약)으로 돕니다. 평가 숫자는 원본 빈자리(샘플의원 규칙·합성 예약) 기준이라 여기 싣지 않습니다.</p>
+      </div>
+    );
   const d = demo();
   if (!d.ok) return <ErrorPanel errors={d.errors} />;
   const { engine, schedule } = d;

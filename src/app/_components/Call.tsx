@@ -12,13 +12,15 @@ import { useEffect, useMemo, useReducer, useRef, useState, type Dispatch } from 
 import { formatShort, type LocalDate } from "@/core/calendar";
 import type { Composed } from "@/core/message";
 import { callReducer, callView, holdRows, INITIAL_CALL, type CallAction, type CallState, type CallView, type HoldRow, type LineView, type SheetView } from "@/demo/call";
-import { DEMO_NOW_MS } from "@/demo/clock";
-import { demo, mustDemo } from "@/demo/data";
+import { demo, demoNowMs, mustDemo } from "@/demo/data";
+import { useClientReady } from "../_lib/useClientReady";
 import { copyText } from "../_lib/copy";
 import { useHolds } from "../_lib/useHolds";
 import { ErrorPanel } from "./ErrorPanel";
 
 export function CallScreen({ initial = INITIAL_CALL }: { initial?: CallState }) {
+  const ready = useClientReady();
+  if (!ready) return <p className="muted">불러오는 중…</p>;
   const d = demo();
   if (!d.ok) return <ErrorPanel errors={d.errors} />;
   return <CallLive initial={initial} />;
@@ -29,9 +31,10 @@ function CallLive({ initial }: { initial: CallState }) {
   const store = useHolds();
   const [state, dispatch] = useReducer(callReducer, initial);
   const [copied, setCopied] = useState<string | null>(null);
-  const input = useMemo(() => ({ engine, schedule, holds: store.holds, nowMs: DEMO_NOW_MS }), [engine, schedule, store.holds]);
+  const nowMs = demoNowMs();
+  const input = useMemo(() => ({ engine, schedule, holds: store.holds, nowMs }), [engine, schedule, store.holds, nowMs]);
   const view = useMemo(() => callView(input, state), [input, state]);
-  const rows = useMemo(() => holdRows(engine, store.holds, DEMO_NOW_MS), [engine, store.holds]);
+  const rows = useMemo(() => holdRows(engine, store.holds, nowMs), [engine, store.holds, nowMs]);
 
   const copy = (key: string, text: string) => {
     void copyText(text).then((ok) => setCopied(ok ? key : `fail:${key}`));
@@ -41,6 +44,7 @@ function CallLive({ initial }: { initial: CallState }) {
     <CallLayout
       view={view}
       scopeLine={engine.rules.scopeLine}
+      pressHelp={pressHelp(engine.rules.intake)}
       rows={rows}
       dispatch={(a) => {
         setCopied(null);
@@ -51,7 +55,7 @@ function CallLive({ initial }: { initial: CallState }) {
       onHold={(memo) => {
         const r = view.result;
         if (!r || !state.selected) return;
-        store.add({ service: r.service.key, date: state.selected.date, start: state.selected.start, nowMs: DEMO_NOW_MS, memo });
+        store.add({ service: r.service.key, date: state.selected.date, start: state.selected.start, nowMs, memo });
         setCopied(null);
       }}
       onUndo={(id) => store.remove(id)}
@@ -73,6 +77,15 @@ export interface CallLayoutProps {
   onUndo: (holdId: string) => void;
   onReset: () => void;
   notice: string | null;
+  /** 안건별로 몇 번 누르면 빈 시간이 뜨는지. 규칙(B01 intake)에서 만든다. */
+  pressHelp?: string;
+}
+
+/** 바로 질문이 나오는 안건은 2번, 하위 선택이 있는 안건은 3번 누른다. */
+export function pressHelp(intake: { label: string; subs?: unknown[] }[]): string {
+  const two = intake.filter((b) => !b.subs).map((b) => b.label);
+  const three = intake.filter((b) => b.subs).map((b) => b.label);
+  return [two.length > 0 ? `${two.join("·")} 2번` : "", three.length > 0 ? `${three.join("·")} 3번` : ""].filter(Boolean).join(", ");
 }
 
 export function CallLayout(p: CallLayoutProps) {
@@ -92,7 +105,7 @@ export function CallLayout(p: CallLayoutProps) {
         <p className="scope">{p.scopeLine}</p>
         {!chosen && (
           <p className="first-help">
-            전화가 오면 고객이 원하는 것 하나를 누르세요. 질문 하나에 답하면 그 안건에 맞는 빈 시간이 날짜별로 뜹니다(상담·재시술 2번, 시술 3번).
+            전화가 오면 고객이 원하는 것 하나를 누르세요. 질문 하나에 답하면 그 안건에 맞는 빈 시간이 날짜별로 뜹니다({p.pressHelp ?? "상담·재시술 2번, 시술 3번"}).
           </p>
         )}
 

@@ -220,8 +220,8 @@ export function formatClock(ms: number): string {
 }
 
 /** 모든 화면 위 띠(PRD F11). */
-export function bandText(engine: Engine, nowMs: number): string {
-  return ["가상 의원", "합성 예약", `기준 ${formatClock(nowMs)}`, ...(engine.assumptionRules ? ["[가정] 규칙 — 병원 확인 전"] : []), "가예약은 이 기기에서만"].join(" · ");
+export function bandText(engine: Engine, nowMs: number, labels: { clinic: string; source: string } = { clinic: "가상 의원", source: "합성 예약" }): string {
+  return [labels.clinic, labels.source, `기준 ${formatClock(nowMs)}`, ...(engine.assumptionRules ? ["[가정] 규칙 — 병원 확인 전"] : []), "가예약은 이 기기에서만"].join(" · ");
 }
 
 function commonTags(slots: Slot[]): string[] {

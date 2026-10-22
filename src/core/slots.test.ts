@@ -222,6 +222,12 @@ describe("수술 날 조건(②)", () => {
     expect(s1005.date).toBe("2026-10-06");
     expect(s1005.tags).toEqual(["다음 날 내원 10/7(수)"]);
   });
+  it("다음 날 조건이 없는 의원이면 '다음 날 내원'을 붙이지 않는다(휴진일을 내원일로 안내하지 않게)", () => {
+    const e = engineWithB01((j) => ((j.surgeryFollowUps as { nextDayMustBeOpen: boolean }).nextDayMustBeOpen = false));
+    const r = ok(findSlots(e, { service: "surgery-full", nowMs: NOW, schedule: EMPTY }));
+    expect(r.slots.length).toBeGreaterThan(0);
+    expect(r.slots.every((s) => s.nextDay === undefined && !s.tags.some((t) => t.startsWith("다음 날 내원")))).toBe(true);
+  });
 });
 
 describe("자원(⑧) — 단계·목요일 야간·자원 일정", () => {

@@ -365,8 +365,10 @@ function toSlot(ctx: Ctx, s: ServiceRule, c: Candidate, urgentDays: Set<LocalDat
   if (urgent) tags.push("입금 즉시 확인 필요");
   const slot: Slot = { date: c.date, start: c.start, end: c.end, band: bandOf(engine, c.start), urgentDeposit: urgent, tags };
   if (isSurgery(s)) {
-    slot.nextDay = addDays(c.date, 1);
-    tags.push(`다음 날 내원 ${formatShort(slot.nextDay)}`);
+    if (engine.rules.surgeryFollowUps.nextDayMustBeOpen) {
+      slot.nextDay = addDays(c.date, 1);
+      tags.push(`다음 날 내원 ${formatShort(slot.nextDay)}`);
+    }
     const notice = engine.rules.surgeryCancelNoticeDays;
     if (diffDays(ctx.today, c.date) < notice) tags.push(`${notice}일 안 수술 — 취소·변경은 원무팀 개별 안내(V04)`);
   }
