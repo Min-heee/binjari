@@ -14,7 +14,7 @@ import { formatExpiry, holdState, liveHolds, type Hold, type HoldState } from "@
 import { questionFor, resolveIntake, type Resolved } from "@/core/intake";
 import { accountNote, composeClosed, composeConfirmation, composeHoldLine, composeReadout, type Composed } from "@/core/message";
 import type { Schedule } from "@/core/schedule";
-import { applyFilter, BAND_LABEL, dayLines, findSlots, firstBookable, suggestSlots, type Band, type DayKind, type Slot } from "@/core/slots";
+import { applyFilter, BAND_LABEL, dayLines, findSlots, suggestSlots, type Band, type DayKind, type Slot } from "@/core/slots";
 
 /** 거르개 요일(일요일은 늘 휴진이라 뺀다). */
 export const FILTER_DOWS: DowKey[] = ["mon", "tue", "wed", "thu", "fri", "sat"];
@@ -153,7 +153,7 @@ export interface ResultView {
   hint: string | null;
   rangeText: string;
   /**
-   * "첫 가능 9/21(월) 11:00"(기준 시각 + B01 leadMinutes를 칸 격자로 올림) · 수술은 "수술은 9/28(월)부터[가정]".
+   * "첫 가능 9/21(월) 11:00" = 실제로 비어 있는 첫 칸 · 수술은 "수술은 9/28(월)부터[가정]".
    * 거르개를 켰거나 회차 옮기기면 그 결과의 첫 칸("첫 칸 10/1(목) 20:00"), 칸이 없으면 null.
    */
   earliestText: string | null;
@@ -325,18 +325,17 @@ export function callView(input: CallInput, s: CallState): CallView {
     };
   });
 
-  const fb = firstBookable(engine, nowMs);
   const isFiltered = s.dows.length > 0 || s.bands.length > 0 || s.jump !== null;
   const firstShown = filtered.slots[0];
   // 거른 결과나 회차 옮기기 창에 "첫 가능 9/21 11:00"이 남으면 그 칸이 조건 안에 있는 것처럼 읽힌다(상담실장 점검 6).
+  // '첫 가능'도 접수 규칙(기준 시각 + leadMinutes)이 가리키는 시각이 아니라 실제 빈 첫 칸이다. 그 시각이 예약·사람·방으로
+  // 차 있으면 목록에 없는 시각을 "첫 가능"이라 읽게 된다(품기 빌드의 CRM 예약에서 발견).
   const earliestText =
-    isFiltered || resolved.mode === "move"
-      ? firstShown
-        ? `첫 칸 ${formatShort(firstShown.date)} ${firstShown.start}`
-        : null
-      : surgery
-        ? `수술은 ${formatShort(surgeryFrom)}부터[가정]`
-        : `첫 가능 ${formatShort(fb.date)} ${fb.time}`;
+    surgery && !isFiltered && resolved.mode !== "move"
+      ? `수술은 ${formatShort(surgeryFrom)}부터[가정]`
+      : firstShown
+        ? `${isFiltered || resolved.mode === "move" ? "첫 칸" : "첫 가능"} ${formatShort(firstShown.date)} ${firstShown.start}`
+        : null;
   const days = baseDays + s.extraDays + engine.rules.searchDays.more;
   // 수술은 첫 가능일 전 날들을 줄로 보이지 않으니, 기간도 첫 가능일부터 적는다.
   const rangeFrom = surgery && surgeryFrom > found.range.from ? surgeryFrom : found.range.from;

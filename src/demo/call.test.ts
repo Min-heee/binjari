@@ -97,6 +97,13 @@ describe("거르개(F12)", () => {
     expect(r.filtered).toBe(true);
     expect(r.totalCount).toBe(38);
   });
+  it("'첫 가능'은 실제로 빈 첫 칸 — 접수 규칙이 가리키는 9/21 11:00이 차 있으면 목록의 첫 칸(9/22 12:00)", () => {
+    const hold = makeHold({ service: "first-consult", date: D("2026-09-21"), start: "11:00", createdAt: DEMO_NOW });
+    const r = callView({ ...input, holds: [hold] }, consultFirst).result!;
+    const first = r.lines.find((l) => l.kind === "slots")!.slots[0];
+    expect(`${first.date} ${first.start}`).toBe("2026-09-22 12:00");
+    expect(r.earliestText).toBe("첫 가능 9/22(화) 12:00");
+  });
   it("거르면 '첫 가능 9/21 11:00' 대신 거른 결과의 첫 칸, 칸이 없으면 숨김", () => {
     const thuEve = callView(input, press({ type: "button", key: "consult" }, { type: "answer", key: "first" }, { type: "toggleDow", dow: "thu" }, { type: "toggleBand", band: "evening" })).result!;
     expect(thuEve.earliestText).toBe("첫 칸 10/1(목) 20:00");
