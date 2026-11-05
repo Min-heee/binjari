@@ -64,7 +64,9 @@ export function liveHolds(engine: Engine, holds: Hold[], nowMs: number): Hold[] 
 
 /** 메모 칸: 전화번호·이메일 등은 가려서 저장한다(한창구 mask.ts). 이름은 막지 못하므로 화면이 "이름·연락처를 쓰지 마세요"를 보인다. */
 export function cleanMemo(memo: string): string {
-  return maskPii(memo.trim().slice(0, 80)).masked;
+  // 가린 **뒤에** 자른다. 먼저 자르면 끝에 걸친 전화번호가 잘려 가림을 피하고("…01012345"),
+  // 가림 표시가 원문보다 길어("민수" → "[이름]") 80자를 넘으면 parseStoredHolds가 저장값 전체를 버린다.
+  return maskPii(memo.trim()).masked.slice(0, 80);
 }
 
 export function makeHold(args: { service: string; date: LocalDate; start: string; createdAt: string; memo?: string }): Hold {
