@@ -31,7 +31,13 @@ const MIME = {
 
 /** ROOT 밖으로 나가는 경로를 막는다. */
 function safeJoin(urlPath) {
-  const decoded = decodeURIComponent(urlPath.split("?")[0]);
+  let decoded;
+  try {
+    decoded = decodeURIComponent(urlPath.split("?")[0]);
+  } catch {
+    // 깨진 퍼센트 인코딩(/%E0%A4%A)은 찾을 수 없는 경로로 본다. 던지면 서버 전체가 죽는다.
+    return null;
+  }
   const rel = normalize(decoded).replace(/^(\.\.[/\\])+/, "");
   const full = join(ROOT, rel);
   return full.startsWith(ROOT) ? full : null;

@@ -103,4 +103,15 @@ describe("메모 칸 — 전화번호 모양은 가린다", () => {
     expect(cleanMemo("a".repeat(100))).toHaveLength(80);
     expect(makeHold({ service: "injection", date: D("2026-09-22"), start: "10:00", createdAt: "2026-09-21T10:00:00+09:00", memo: "문의 me@example.com" }).memo).toBe("문의 [이메일]");
   });
+  it("가림 표시로 글이 늘어도 80자를 넘지 않고, 저장값으로 다시 읽힌다", () => {
+    // 화면 입력칸 maxLength=80 안의 메모. "민수"(2자)가 "[이름]"(4자)으로 늘어난다.
+    const memo = "민수님 ".repeat(20).slice(0, 80);
+    const h = makeHold({ service: "injection", date: D("2026-09-22"), start: "10:00", createdAt: "2026-09-21T10:00:00+09:00", memo });
+    expect(h.memo.length).toBeLessThanOrEqual(80);
+    expect(parseStoredHolds([h], E)).toEqual({ holds: [h], discarded: false });
+  });
+  it("80자 끝에 걸친 전화번호도 일부가 남지 않게 가린다", () => {
+    const m = cleanMemo(`${"x".repeat(72)}01012345678`);
+    expect(m).not.toMatch(/\d{4}/);
+  });
 });
